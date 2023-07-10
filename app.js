@@ -71,7 +71,7 @@ bot.start(async (ctx) => {
 
     // Send the welcome message with user information and buttons
     return ctx.replyWithHTML(
-        `<em>Welcome <b>${user.first_name}</b> to the bot!\n\n<b>Your Information:</b>\n<b>Coins:</b> <code>${coins}</code></em>\n\n<b>Before sending any links, please check the links format in the files section from the menu below and make sure you're sending the correct format.</b>`,
+        `<em>Bem-vindo(a) <b>${user.first_name}</b> ao JR.IMAGE STOCK Bot!\n\n<b>Your Information:</b>\n<b>Coins:</b> <code>${coins}</code></em>\n\n<b>Antes de enviar qualquer link, verifique o formato dos links na seção de arquivos do menu abaixo e certifique-se de enviar o formato correto.</b>`,
         {
             reply_markup: keyboardMarkup
         }
