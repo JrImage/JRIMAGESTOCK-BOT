@@ -110,7 +110,7 @@ bot.hears('My Info', async (ctx) => {
 
 bot.hears('Pricing', async (ctx) => {
 
-    ctx.replyWithHTML(`<b>Our Pricing:</b>\n\n<code>1 Coin = 1$ or ₹90</code>\n\n<b>Payment Methods:</b>\n<code>PayPal</code>\n<code>Binance</code>\n<code>UPI</code>\n\n<b>For Purchasing coins, contact us using the contact button below</b>`, {
+    ctx.replyWithHTML(`<b>Nossos Preços:</b>\n\n<code>1 Coin = 1$ or ₹90</code>\n\n<b>Aceitamos Pagamentos via:</b>\n<code>Pix</code>\n<code>Nubank</code>\n<code>Mercado Pago</code>\n\n<b>Para comprar créditos entre em contato conosco, clicando no botão abaixo.</b>`, {
         reply_markup: {
             inline_keyboard: [
                 [
