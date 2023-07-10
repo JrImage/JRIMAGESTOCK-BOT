@@ -1,6 +1,6 @@
 {
   "Envato Elements": {
-    "price": 0.05,
+    "price": 0.2,
     "delivery": "Instant",
     "license": "Commercial",
     "types": "All types of files allowed",
@@ -9,7 +9,7 @@
     "link": "All formats allowed"
   },
   "Freepik": {
-    "price": 0.07,
+    "price": 0.2,
     "delivery": "Instant",
     "license": "Premium",
     "types": "All types of files allowed (except videos)",
@@ -18,7 +18,7 @@
     "link": "All formats allowed"
   },
   "AdobeStock Video": {
-    "price": 1,
+    "price": 3,
     "delivery": "Instant",
     "license": "Extended",
     "types": "Videos only (1080p to 2k HD resolution)",
@@ -27,7 +27,7 @@
     "link": "https://stock.adobe.com/video/{title}/{image-ID}\n\nMake sure to exclude any additional information after the image ID and avoid including country codes or variations. The link should end immediately after the image ID. \uD83D\uDEAB\uD83C\uDF0D\n\nIncorrect Example: ❌\nhttps://stock.adobe.com/in/video/beautiful-tender-girl/601584439\n\nCorrect Example: ✅\nhttps://stock.adobe.com/video/beautiful-tender-girl/601584439\n\nPlease note that our bot will only process your request if the link is in the correct format. ✨"
   },
   "AdobeStock": {
-    "price": 0.10,
+    "price": 0.30,
     "delivery": "5 minutes to 2 hours",
     "license": "Extended",
     "types": "All types of files allowed",
