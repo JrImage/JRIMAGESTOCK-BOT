@@ -58,7 +58,7 @@ bot.start(async (ctx) => {
     // Generate the keyboard markup
     const keyboardMarkup = {
         keyboard: [
-            ['Seus Créditos', 'Contato']
+            ['My Info', 'Contact']
         ],
         resize_keyboard: true,
         one_time_keyboard: true,
