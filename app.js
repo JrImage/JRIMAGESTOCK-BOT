@@ -270,12 +270,12 @@ bot.on('text', async (ctx) => {
         if (!rawLink.includes('https://')) {
             return;
         }
-        const pleasewait = await ctx.replyWithHTML('<b>Please wait while I process your request...</b>', {
+        const pleasewait = await ctx.replyWithHTML('<b>Por favor, aguarde enquanto eu processo sua solicitação...</b>', {
             reply_to_message_id: ctx.message.message_id
         });
         const domain = Object.keys(files).find((key) => rawLink.includes(files[key].domain));
         if (!domain) {
-            ctx.telegram.editMessageText(pleasewait.chat.id, pleasewait.message_id, undefined, `<b>Oh no! It seems like the link you sent is not supported by our system. Please try again later.</b>`, {parse_mode: 'HTML'})
+            ctx.telegram.editMessageText(pleasewait.chat.id, pleasewait.message_id, undefined, `<b>Oh não! Parece que o link que você enviou não é compatível com nosso sistema. Por favor, entre em contato com o @JRIMAGE.</b>`, {parse_mode: 'HTML'})
             return;
         }
         try {
@@ -285,7 +285,7 @@ bot.on('text', async (ctx) => {
             const result = await downloadFunction(userId, price, rawLink, ctx);
             if (result.success) {
                 const charge = await chargeUser(userId, price);
-                ctx.telegram.editMessageText(pleasewait.chat.id, pleasewait.message_id, undefined,`<b>Your request has been processed. Here's the download link\n\nRemaining Coins: <code>${charge.coins}</code> </b>`, {
+                ctx.telegram.editMessageText(pleasewait.chat.id, pleasewait.message_id, undefined,`<b>O seu pedido foi processado. Aqui está o link para download.\n\nRemaining Coins: <code>${charge.coins}</code> </b>`, {
                     reply_markup: {
                         inline_keyboard: [
                             [
@@ -298,11 +298,11 @@ bot.on('text', async (ctx) => {
                     }, parse_mode: 'HTML'
                 })
             } else {
-                ctx.telegram.editMessageText(pleasewait.chat.id, pleasewait.message_id, undefined,`<b>Oh no! Something went wrong with your purchase. Please try again later.\n\n${result.downloadLink}</b>`, {parse_mode: 'HTML'})
+                ctx.telegram.editMessageText(pleasewait.chat.id, pleasewait.message_id, undefined,`<b>Oh não! Algo deu errado com sua compra. Por favor, entre em contato com o @JRIMAGE.\n\n${result.downloadLink}</b>`, {parse_mode: 'HTML'})
             }
         } catch (error) {
             // console.log(error);
-            ctx.telegram.editMessageText(pleasewait.chat.id, pleasewait.message_id, undefined,`<b>Oh no! Something went wrong with your purchase. Please try again later.\n\n${error}</b>`, {parse_mode: 'HTML'})
+            ctx.telegram.editMessageText(pleasewait.chat.id, pleasewait.message_id, undefined,`<b>Oh não! Algo deu errado com sua compra. Por favor, entre em contato com o @JRIMAGE.\n\n${error}</b>`, {parse_mode: 'HTML'})
         }
     }
 )
@@ -393,7 +393,7 @@ async function instantDownload(userId, price, rawLink) {
 async function outOfStock(userId, price, rawLink) {
     return {
         success: false,
-        downloadLink: 'Sorry, this item is out of stock. Please try again later.'
+        downloadLink: 'Desculpe, este item está fora de estoque. Por favor, entre em contato com o @JRIMAGE.'
     }
 }
 
