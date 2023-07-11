@@ -58,9 +58,7 @@ bot.start(async (ctx) => {
     // Generate the keyboard markup
     const keyboardMarkup = {
         keyboard: [
-            ['My Info', 'Contact'],
-            ['Files'],
-            ['Pricing', 'Bot updates']
+            ['My Info', 'Contact']
         ],
         resize_keyboard: true,
         one_time_keyboard: true,
@@ -81,9 +79,7 @@ bot.start(async (ctx) => {
 bot.hears('🔙', async (ctx) => {
     const keyboardMarkup = {
         keyboard: [
-            ['My Info', 'Contact'],
-            ['Files'],
-            ['Pricing', 'Bot updates']
+            ['My Info', 'Contact']
         ],
         resize_keyboard: true,
         one_time_keyboard: true,
