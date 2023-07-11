@@ -58,7 +58,7 @@ bot.start(async (ctx) => {
     // Generate the keyboard markup
     const keyboardMarkup = {
         keyboard: [
-            ['My Info', 'Contact']
+            ['Seus Créditos', 'Contato']
         ],
         resize_keyboard: true,
         one_time_keyboard: true,
@@ -69,7 +69,7 @@ bot.start(async (ctx) => {
 
     // Send the welcome message with user information and buttons
     return ctx.replyWithHTML(
-        `<em>Bem-vindo(a) <b>${user.first_name}</b> ao JR.IMAGE STOCK Bot!\n\n<b>Your Information:</b>\n<b>Coins:</b> <code>${coins}</code></em>\n\n<b>Antes de enviar qualquer link, verifique o formato dos links na seção de arquivos do menu abaixo e certifique-se de enviar o formato correto.</b>`,
+        `<em>Bem-vindo(a) <b>${user.first_name}</b> ao JR.IMAGE STOCK bot!\n\n<b>Seus Créditos:</b>\n<b>Coins:</b> <code>${coins}</code></em>\n\n<b></b>`,
         {
             reply_markup: keyboardMarkup
         }
