@@ -101,7 +101,7 @@ bot.hears('My Info', async (ctx) => {
     if (!user) {
         return ctx.replyWithHTML(`<em><b>Oh no! It seems like you haven't registered with us yet. But don't worry, we're here to guide you through the process! To get started, simply send the "<code>/start</code>" command, and our system will process the rest. We can't wait to have you join our community!</b></em>`)
     }
-    return ctx.replyWithHTML(`<em><b>Your Information:</b>\n<b>Coins:</b> <code>${user.coins}</code></em>`);
+    return ctx.replyWithHTML(`<em><b>Suas Informações:</b>\n<b>Saldo:</b> <code>${user.coins}</code></em>`);
 });
 
 bot.hears('Pricing', async (ctx) => {
