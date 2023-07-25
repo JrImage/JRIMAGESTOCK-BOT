@@ -321,15 +321,15 @@ async function coinsVerify(userId, price) {
         const user = await users.findOne({userId});
 
         if (!user) {
-            throw new Error('User not found');
+            throw new Error('Usuário não encontrado');
         }
 
         const userCoins = parseFloat(user.coins); // Convert coins to a numeric type
 
         if (isNaN(userCoins) || userCoins < price) {
-            throw new Error('Insufficient Coins');
+            throw new Error('Moedas insuficientes');
         }
-        return {success: true, message: 'Verification successful'};
+        return {success: true, message: 'Verificação bem-sucedida'};
     } catch (error) {
         return {success: false, message: error.message};
     }
@@ -347,7 +347,7 @@ async function chargeUser(userId, price) {
     const userCoins = parseFloat(user.coins); // Convert coins to a numeric type
 
     if (isNaN(userCoins) || userCoins < price) {
-        throw new Error('Insufficient Coins');
+        throw new Error('Moedas insuficientes');
     }
 
     const updatedCoins = (userCoins - price).toFixed(2); // Round the result to 2 decimal places
