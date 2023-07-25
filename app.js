@@ -69,7 +69,7 @@ bot.start(async (ctx) => {
 
     // Send the welcome message with user information and buttons
     return ctx.replyWithHTML(
-        `<em>Bem-vindo(a) <b>${user.first_name}</b> ao JR.IMAGE STOCK bot!\n\n<b>Seus Créditos:</b>\n<b>Coins:</b> <code>${coins}</code></em>\n\n<b></b>`,
+        `<em>Bem-vindo(a) <b>${user.first_name}</b> ao JR.IMAGE STOCK bot!\n\n<b>Suas Informações:</b>\n<b>Saldo:</b> <code>${coins}</code></em>\n\n<b></b>`,
         {
             reply_markup: keyboardMarkup
         }
@@ -99,7 +99,7 @@ bot.hears('My Info', async (ctx) => {
     const users = await db.collection('users');
     const user = await users.findOne({userId});
     if (!user) {
-        return ctx.replyWithHTML(`<em><b>Oh no! It seems like you haven't registered with us yet. But don't worry, we're here to guide you through the process! To get started, simply send the "<code>/start</code>" command, and our system will process the rest. We can't wait to have you join our community!</b></em>`)
+        return ctx.replyWithHTML(`<em><b>Oh não! Parece que você ainda não se registrou conosco. Mas não se preocupe, estamos aqui para orientá-lo no processo! Para começar, basta enviar o "<code>/start</code>" comando e nosso sistema processará o restante. Mal podemos esperar para que você se junte à nossa comunidade!</b></em>`)
     }
     return ctx.replyWithHTML(`<em><b>Suas Informações:</b>\n<b>Saldo:</b> <code>${user.coins}</code></em>`);
 });
@@ -164,7 +164,7 @@ bot.hears('Files', async (ctx) => {
     keyboardMarkup.keyboard.push(['🔙']);
 
     // Send the welcome message with file options
-    return ctx.replyWithHTML(`<b>Please select a file to download</b>`,
+    return ctx.replyWithHTML(`<b>Selecione um arquivo para baixar</b>`,
         {
             reply_markup: keyboardMarkup, reply_to_message_id: ctx.message.message_id
         }
@@ -177,7 +177,7 @@ bot.hears(Object.keys(files), async (ctx) => {
     const {price, delivery, license, types, link} = files[selectedFile];
 
     const purchaseConfirmation = await ctx.replyWithHTML(
-        `<b>File Information:</b>\n<em>You have selected to buy a file from ${selectedFile} for the price of ${price} coins.</em>\n\n<b>Details:</b>\n\n<code>-License Type: ${license}</code>\n<code>-Delivery: ${delivery}</code>\n\n<em><b>Please Note: <code>${types}</code></b></em>\n\n<b>❗Important❗</b>\n<b>link Format: ${link}</b>`
+        `<b>Informações do arquivo:</b>\n<em>Você optou por comprar um arquivo de ${selectedFile} pelo preço de ${price} coins.</em>\n\n<b>Detalhes:</b>\n\n<code>-License Type: ${license}</code>\n<code>-Delivery: ${delivery}</code>\n\n<em><b>Please Note: <code>${types}</code></b></em>\n\n<b>❗Important❗</b>\n<b>link Format: ${link}</b>`
     );
 });
 
@@ -240,11 +240,11 @@ bot.command('gen', async (ctx) => {
     }
     const rawCoins = ctx.message.text.split(' ')[1];
     if (isNaN(rawCoins)) {
-        return ctx.replyWithHTML(`<b>Invalid coins amount! Coins amount must be a number!</b>`);
+        return ctx.replyWithHTML(`<b>Quantidade de moedas inválida! A quantidade de moedas deve ser um número!</b>`);
     }
     const coins = parseFloat(rawCoins).toFixed(2);
     const code = await generateRedeemCode(coins);
-    return await ctx.replyWithHTML(`<b>Successfully generated the redeem code:</b>\n\n<b>Code: </b><code>${code}</code>\n<b>Coins:</b> <code>${coins}</code>\n\n<b>Redeem code by copy and paste this:</b>\n<code>/redeem ${code}</code>`);
+    return await ctx.replyWithHTML(`<b>Código de resgate gerado com sucesso:</b>\n\n<b>Code: </b><code>${code}</code>\n<b>Coins:</b> <code>${coins}</code>\n\n<b>Redeem code by copy and paste this:</b>\n<code>/redeem ${code}</code>`);
 });
 
 // Create a broadcast command to braod cast messages among users
